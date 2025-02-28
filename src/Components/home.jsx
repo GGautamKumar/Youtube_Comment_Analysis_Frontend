@@ -15,7 +15,7 @@ const YouTubeCommentsAnalyzer = () => {
 
   const handleAnalyze = async() => {
     console.log(apiUrl);
-    const data=await axios.post(apiUrl,{url:videoUrl});
+    const data=await axios.post(`${apiUrl}/api/add`,{url:videoUrl});
     if(data.data.message==="Data saved successfully")
     {
     navigate("/result",{state:data.data});
