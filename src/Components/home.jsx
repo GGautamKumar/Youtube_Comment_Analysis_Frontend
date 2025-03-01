@@ -8,6 +8,7 @@ const YouTubeCommentsAnalyzer = () => {
   //dotenv.config();
   const [videoUrl, setVideoUrl] = useState("");
   const navigate=useNavigate();
+  axios.defaults.withCredentials=true;
 
   const handleInputChange = (e) => {
     setVideoUrl(e.target.value);
@@ -15,7 +16,7 @@ const YouTubeCommentsAnalyzer = () => {
 
   const handleAnalyze = async() => {
     console.log(apiUrl);
-    const data=await axios.post(`${apiUrl}/api/add`,{url:videoUrl});
+    const data=await axios.post('https://you-tube-comment-analysis-backend.vercel.app/api/add',{url:videoUrl});
     if(data.data.message==="Data saved successfully")
     {
     navigate("/result",{state:data.data});
