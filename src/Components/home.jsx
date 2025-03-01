@@ -8,7 +8,7 @@ const YouTubeCommentsAnalyzer = () => {
   //dotenv.config();
   const [videoUrl, setVideoUrl] = useState("");
   const navigate=useNavigate();
-  axios.defaults.withCredentials=true;
+  //axios.defaults.withCredentials=true;
 
   const handleInputChange = (e) => {
     setVideoUrl(e.target.value);
