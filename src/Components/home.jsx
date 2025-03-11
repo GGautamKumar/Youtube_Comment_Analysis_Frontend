@@ -16,12 +16,7 @@ const YouTubeCommentsAnalyzer = () => {
 
   const handleAnalyze = async() => {
     console.log(apiUrl);
-    const data=await axios.post('https://you-tube-comment-analysis-git-d8f21a-gautams-projects-6a7f62ca.vercel.app/api/add',{url:JSON.stringify(videoUrl)},{
-      timeout: 20000,
-      headers:{
-        'Content-Type':'application/json'
-      }
-    });
+    const data=await axios.post('https://youtube-comment-analysis-frontend.vercel.app/api/add',{url:JSON.stringify(videoUrl)});
     if(data.data.message==="Data saved successfully")
     {
     navigate("/result",{state:data.data});
